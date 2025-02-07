@@ -1,0 +1,10 @@
+---
+- name: OS 별 remove 웹서버
+  hosts: all
+  become: yes
+  vars:
+    dist_name: "{{ 'amazon' if ansible_distribution == 'Amazon'
+                    else 'ubuntu' if ansible_distribution == 'Ubuntu'}}"
+  tasks:
+    - name: web server selection
+      include_tasks: "{{ dist_name }}.yaml"

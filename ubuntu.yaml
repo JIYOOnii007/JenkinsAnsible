@@ -5,5 +5,5 @@
       service: name=nginx state=started
 
     - name: index.html 만들기
-      get_url: url=https://www.inu.ac.kr dest=/var/www/html/index.html
+      get_url: url=https://www.naver.com dest=/var/www/html/index.html
 
